@@ -57,6 +57,9 @@ header {
 .Header__List_Links a:nth-child(1) {
     color: rgb(0, 0, 0);
 }
+.Header__List_BurgerMenu {
+    display: none;
+}
 
 /* Article */
 article {
@@ -158,4 +161,74 @@ main {
 .Main__List_Text {
     width: 50%;
     font-size: 1.25em;
+}
+
+/* Meadia */
+@media screen and (max-width: 1000px) {
+    /* Burger */
+  .Header__List_Links {
+    display: none;
+  }
+  .Header__List_BurgerMenu{
+    display: inline;
+    z-index: 6;
+  }
+  .Header__List_BurgerMenu > .Figure_1 {
+    width: 50px;
+    height: 5px;
+    background-color: rgb(255, 255, 255);
+    margin-right: 35px;
+  }
+  .Header__List_BurgerMenu > .Figure_2 {
+    width: 50px;
+    height: 5px;
+    background-color: rgb(255, 255, 255);
+    margin-right: 35px;
+    margin-top: 5px;
+  }
+  .Header__List_BurgerMenu > .Figure_3 {
+    width: 50px;
+    height: 5px;
+    background-color: rgb(255, 255, 255);
+    margin-right: 35px;
+    margin-top: 5px;
+  }
+
+  /* Burger_Activate */
+  .Header__List_BurgerMenu.NewClass > .Figure_2 {
+    display: none;
+  }
+  .Header__List_BurgerMenu.NewClass > .Figure_1 {
+    transform: rotate(40deg);
+  }
+  .Header__List_BurgerMenu.NewClass > .Figure_3 {
+    transform: rotate(-40deg);
+    margin-top: -3px;
+  }
+  .Header__List_Links.NewLinks {
+    display: inline;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background-color: rgb(200, 43, 43);
+    overflow: hidden;
+  }
+  .Header__List_Adaptation {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+  .Header__List_Links.NewLinks  a {
+    margin-left: 0;
+    margin-top: 150px;
+    font-size: 2.5em;
+  }
+  body.NoScroll {
+    overflow: hidden;
+  }
 }
